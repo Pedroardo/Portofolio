@@ -1,6 +1,12 @@
 import DataImage from "./data";
 import { listTools, listProyek } from "./data";
+import { FlipWords } from "./components/ui/flip-words";
 function App() {
+  const words = [
+    "Frontend Developer",
+    "Pedro Ardometrius Tan",
+    "Backend Developer",
+  ];
   return (
     <>
       <div className="hero grid md:grid-cols-2 pt-10 items-center xl:gap-0 gap-6 grid-cols-1 ">
@@ -10,13 +16,12 @@ function App() {
             <q></q>
           </div> */}
           <h1 className="text-5xl/tight font-bold mb-6">
-            Hi, Saya Pedro Ardometrius Tan
+            Hi, Saya <FlipWords words={words} className={"text-white"} />
           </h1>
           <p className="text-base/loose opacity-60 mb-6">
-            Saya mempunyai ketertarikan dalam bidang Programming dan Designer,
-            terutama pada pembuatan Website dan Desain Website/Aplikasi,
-            ketertarikan pada bidang ini sudah berlangsung lebih dari 2 Tahun
-            untuk semua Bidang.
+            Saya mempunyai ketertarikan dalam bidang Programming dan UI/UX
+            Design, terutama pada pembuatan Website, ketertarikan pada bidang
+            ini sudah berlangsung lebih dari 2 Tahun.
           </p>
           <div className="flex items-center gap-2 sm:gap-4">
             <a
@@ -50,11 +55,10 @@ function App() {
           />
           <p className="text-base/loose mb-10">
             Hi, perkenalkan saya Pedro Ardometrius Tan, seorang Full Stack Web
-            Developer dan Designer untuk UI/UX Design maupun Product Digital,
-            Saya percaya bahwa desain dan fungsionalitas harus berjalan
-            beriringan, sehingga setiap proyek yang saya kembangkan tidak hanya
-            terlihat menarik tetapi juga memberikan pengalaman pengguna yang
-            optimal.
+            Developer dan Designer untuk UI/UX Design, Saya percaya bahwa desain
+            dan fungsionalitas harus berjalan beriringan, sehingga setiap proyek
+            yang saya kembangkan tidak hanya terlihat menarik tetapi juga
+            memberikan pengalaman pengguna yang optimal.
           </p>
           <div className="flex items-center justify-between">
             <img
@@ -142,9 +146,10 @@ function App() {
 
         <div className="mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 ">
           {listProyek.map((p) => (
-            <div
+            <a
+              href=""
               key={p.id}
-              className="p-4 bg-zinc-800 rounded-md "
+              className="p-4 bg-zinc-800 rounded-md hover:bg-zinc-700 transition-all group"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={p.dad}
@@ -157,23 +162,15 @@ function App() {
                 <div className="flex flex-wrap gap-2">
                   {p.tools.map((t, i) => (
                     <p
-                      className="py-1 px-3 border border-zinc-600 roundedmd font-semibold bg-zinc-700"
+                      className="py-1 px-3 border border-zinc-600 roundedmd font-semibold bg-zinc-700 group-hover:bg-zinc-800 rounded-md"
                       key={i}
                     >
                       {t}
                     </p>
                   ))}
                 </div>
-                <div className="mt-8 text-center">
-                  <a
-                    href=""
-                    className="bg-violet-700 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-600"
-                  >
-                    See Website
-                  </a>
-                </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

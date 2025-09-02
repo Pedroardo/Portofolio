@@ -1,3 +1,4 @@
+import { IconReport } from "@tabler/icons-react";
 import React from "react";
 import { useState, useEffect } from "react";
 const Navbar = () => {
@@ -18,11 +19,7 @@ const Navbar = () => {
   }, []);
   return (
     <div className="navbar py-7 flex items-center justify-between">
-      <div className="logo">
-        <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
-          Portofolio
-        </h1>
-      </div>
+      <div className="logo"></div>
       <ul
         className={`menu flex items-center sm:gap-10 fixed left-1/2 -translate-x-1/2 md:-translate-x-0 md:static md:opacity-100 bg-white/30 backdrop-blur-md p-4 rounded-br-2xl rounded-bl-2xl gap-4 md:bg-transparent transition-all z-40 md:transition-none${
           active ? "top-0 opacity-100" : "-top-10 opacity-0"
